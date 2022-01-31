@@ -3,16 +3,12 @@ import styled from "styled-components";
 import Product from "./Product";
 
 const GridView = ({ products }) => {
-  console.log(products);
   return (
     <Wrapper>
       <div className="products-container">
         {products.map((item) => {
           return <Product key={item.id} {...item} />;
         })}
-        {/* {products.map((product) => {
-          return <Product key={product.id} {...product} />;
-        })} */}
       </div>
     </Wrapper>
   );
