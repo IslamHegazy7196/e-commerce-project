@@ -40,7 +40,7 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLEAR_CART });
   };
   useEffect(() => {
-    dispatch({ type: CLEAR_CART });
+    dispatch({ type: COUNT_CART_TOTALS });
     localStorage.setItem("cart", JSON.stringify(state.cart));
   }, [state.cart]);
   return (
