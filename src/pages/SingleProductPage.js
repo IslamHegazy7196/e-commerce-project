@@ -25,14 +25,15 @@ const SingleProductPage = () => {
   } = useProductsContext();
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
-  console.log(product);
   useEffect(() => {
     if (error) {
       setTimeout(() => {
         history.push("/");
       }, 3000);
     }
+    // eslint-disable-next-line
   }, []);
   if (loading) {
     return <Loading />;

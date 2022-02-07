@@ -2,7 +2,7 @@ import React from "react";
 import { useFilterContext } from "../context/filter_context";
 import GridView from "./GridView";
 import ListView from "./ListView";
-import Product from "./Product";
+// import Product from "./Product";
 
 const ProductList = () => {
   const { filtered_products: products, grid_view } = useFilterContext();

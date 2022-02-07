@@ -20,8 +20,9 @@ const cart_reducer = (state, action) => {
         } else {
           return cartItem;
         }
+
+        return { ...state, cart: tempCart };
       });
-      return { ...state, cart: tempCart };
     } else {
       const newItem = {
         id: id + color,
@@ -60,7 +61,9 @@ const cart_reducer = (state, action) => {
           }
           return { ...item, amount: newAmount };
         }
+        return item;
       }
+      return { ...state, cart: tempCart };
     });
   }
   if (action.type === COUNT_CART_TOTALS) {
@@ -73,10 +76,10 @@ const cart_reducer = (state, action) => {
       },
       { total_items: 0, total_amount: 0 }
     );
-    return {...state,total_items,total_amount}
+    return { ...state, total_items, total_amount };
   }
   return state;
-  throw new Error(`No Matching "${action.type}" - action type`);
+  // throw new Error(`No Matching "${action.type}" - action type`);
 };
 
 export default cart_reducer;
