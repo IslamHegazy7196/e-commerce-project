@@ -61,10 +61,10 @@ const cart_reducer = (state, action) => {
           }
           return { ...item, amount: newAmount };
         }
-        return item;
       }
-      return { ...state, cart: tempCart };
+      return item;
     });
+    return { ...state, cart: tempCart };
   }
   if (action.type === COUNT_CART_TOTALS) {
     const { total_items, total_amount } = state.cart.reduce(
